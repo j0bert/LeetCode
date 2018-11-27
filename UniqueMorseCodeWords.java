@@ -1,34 +1,48 @@
+import java.util.ArrayList;
 
 public class UniqueMorseCodeWords {
 
 	public static void main(String[] args) {
 		
-		String [] words = {"gag", "ton", "lit"};
+		String [] words = {"gin", "zen", "gig", "msg"};
 		
-		uniqueMorseRepresentations(words);
+		System.out.println(uniqueMorseRepresentations(words));
 		
-
 	}
 	
 	static public int uniqueMorseRepresentations(String[] words) {
 		
-		String [] ans = new String [words.length];
+		String [] codes = new String [words.length];
 		
-		String [] Morse = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+		String [] Morse = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",
+				".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
 		
 		for (int i = 0; i < words.length; i++){
 			char [] letters = words[i].toCharArray();
-			String [] code = new String [3];
+			String word = "";
 			for (int k = 0; k < letters.length; k++){
 				String morse = Morse[(int)letters[k] - 97];
-				System.out.println(morse);
-				//code.
-				//System.out.println(code);
+				//System.out.print(morse);
+				word = word + morse;
+				//System.out.println(word);
 			}
+			codes[i] = word;	
 		}
 		
-		return ans.length;
-        
-    }
+			ArrayList<String> diffMorse = new ArrayList<>();
+			
+			for (int m = 0; m < words.length; m++){
+				if (!diffMorse.contains(codes[m])){
+					diffMorse.add(codes[m]);
+				}
+			}
+			
+			int ans = diffMorse.size();
+			
+			return ans;
+			
+	}
 
+		
+        
 }
