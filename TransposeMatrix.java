@@ -1,23 +1,9 @@
 
-public class TransposeMatrix {
+/*Given a matrix A, return the transpose of A.
 
-	public static void main(String[] args) {
-		
-		int [][] A = new int[][]{
-			{1,2,3},
-			{4,5,6}
-		};
-		
-		int [][] B = transpose(A);
-		
-		for (int a = 0; a < B.length; a++){
-			for (int b = 0; b < B[0].length; b++){
-				System.out.print(B[a][b] + " ");
-			}
-			System.out.println();
-		}
-		
-	}
+The transpose of a matrix is the matrix flipped over it's main diagonal, switching the row and column indices of the matrix.*/
+
+public class TransposeMatrix {
 	
     public static int[][] transpose(int[][] A) {
     	
